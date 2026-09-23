@@ -1,14 +1,23 @@
-node {
-    stage('Checkout') {
-        git branch: 'main',
-            url: 'https://github.com/username/repository.git'
-    }
+pipeline {
+    agent any
 
-    stage('Build') {
-        sh 'echo "Building application..."'
-    }
+    stages {
+        stage('Build') {
+            steps {
+                echo 'Building application...'
+            }
+        }
 
-    stage('Test') {
-        sh 'echo "Running tests..."'
+        stage('Test') {
+            steps {
+                echo 'Running tests...'
+            }
+        }
+
+        stage('Deploy') {
+            steps {
+                echo 'Deploying application...'
+            }
+        }
     }
 }
