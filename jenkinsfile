@@ -1,0 +1,14 @@
+node {
+    stage('Checkout') {
+        git branch: 'main',
+            url: 'https://github.com/username/repository.git'
+    }
+
+    stage('Build') {
+        sh 'echo "Building application..."'
+    }
+
+    stage('Test') {
+        sh 'echo "Running tests..."'
+    }
+}
