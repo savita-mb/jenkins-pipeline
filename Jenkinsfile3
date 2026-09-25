@@ -1,0 +1,37 @@
+pipeline {
+
+    agent none
+
+    stages {
+
+        stage('Parallel Build') {
+
+            parallel {
+
+                stage('Java Build') {
+                    agent { label 'java' }
+
+                    steps {
+                        echo "Building Java Project"
+                    }
+                }
+
+                stage('C Build') {
+                    agent { label 'c' }
+
+                    steps {
+                        echo "Building C Project"
+                    }
+                }
+}
+}
+                stage('Deploy'){
+                 agent any
+                  steps{
+                   echo "Deploying C and Java projects"
+}
+}
+
+            }
+        }
+    
