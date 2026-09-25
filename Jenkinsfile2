@@ -14,7 +14,7 @@ echo "Testing the process"
 }
 stage('Deploy'){
 steps{
-echo "Deploying the process
+echo "Deploying the process"
       }
    }
  }
