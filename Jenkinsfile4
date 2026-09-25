@@ -1,0 +1,17 @@
+pipeline{
+agent any
+stages{
+stage('build'){
+environment{
+BUID_ENV="DEV"
+}
+steps{
+echo "building the project: ${BUID_ENV}"
+}}
+stage('Deploy'){
+environment{
+BUID_ENV="PROD"
+}
+steps{
+echo "Deploying the project: ${BUID_ENV}"
+}}}}
