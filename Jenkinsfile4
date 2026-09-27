@@ -3,7 +3,7 @@ agent any
 stages{
 stage('build'){
 environment{
-BUID_ENV="DEV"
+BUID_ENV="TEST"
 }
 steps{
 echo "building the project: ${BUID_ENV}"
