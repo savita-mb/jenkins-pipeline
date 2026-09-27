@@ -1,0 +1,35 @@
+pipeline {
+
+    agent any
+
+
+    parameters {
+
+        choice(
+
+            name: 'ENVIRONMENT',
+
+            choices: ['DEV', 'QA', 'PROD'],
+
+            description: 'Select Environment'
+
+        )
+
+    }
+
+
+    stages {
+
+        stage('Deploy') {
+
+            steps {
+
+                echo "Deploying application to ${params.ENVIRONMENT}"
+
+            }
+
+        }
+
+    }
+
+}
