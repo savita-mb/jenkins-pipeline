@@ -1,35 +1,19 @@
 pipeline {
-
     agent any
 
-
     parameters {
-
-        choice(
-
-            name: 'ENVIRONMENT',
-
-            choices: ['DEV', 'QA', 'PROD'],
-
-            description: 'Select Environment'
-
+        string(
+            name: 'NAME',
+            defaultValue: 'Savita',
+            description: 'Enter Name'
         )
-
     }
-
 
     stages {
-
-        stage('Deploy') {
-
+        stage('Test') {
             steps {
-
-                echo "Deploying application to ${params.ENVIRONMENT}"
-
+                echo "Hello ${params.NAME}"
             }
-
         }
-
     }
-
 }
